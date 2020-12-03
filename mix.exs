@@ -8,7 +8,14 @@ defmodule ContentfulRenderer.MixProject do
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: "RichText to HTML Renderer for Contentful",
+      package: %{
+        licenses: ["MIT AND Apache-2.0"],
+        links: %{
+          github: "https://github.com/cloveapp/community-contentful-html-renderer-elixir"
+        }
+      }
     ]
   end
 
