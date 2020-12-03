@@ -3,6 +3,10 @@ defmodule ContentfulRenderer.Html do
   alias ContentfulRenderer.Html.DefaultRenderer
 
   def document_to_html_string(%{"content" => content}, opts \\ %{}) do
+    content_to_html_string(content, opts)
+  end
+
+  def content_to_html_string(content, opts \\ %{}) when is_map(content) or is_list(content) do
     defaulted_opts =
       Map.merge(opts, %{
         render_node: Map.merge(default_renderers(), Map.get(opts, :render_node, %{})),
